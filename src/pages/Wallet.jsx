@@ -61,7 +61,7 @@ function Wallet() {
           <div className='container mx-auto px-4 mb-10 flex flex-col items-center justify-center gap-4'>
             <div className='flex gap-4 text-center'>
               <span className='flex-1'>
-                <h3 className='text-xl sm:text-2xl font-bold text-white'>BEP COIN</h3>
+                <h3 className='text-xl sm:text-2xl font-bold text-white'>BMX COIN</h3>
                 <h2 id='points' className='text-xl sm:text-2xl font-bold text-white mb-2'>
                   {profile?.dailyPoints?.totalPoints || 0}
                 </h2>
@@ -73,7 +73,7 @@ function Wallet() {
                 </button>
               </span>
               <span className='flex-1'>
-                <h3 className='text-xl sm:text-2xl font-bold text-white'>EXTRA BEP</h3>
+                <h3 className='text-xl sm:text-2xl font-bold text-white'>EXTRA BMX</h3>
                 <h2 id='extrapoints' className='text-xl sm:text-2xl font-bold text-white mb-2'>
                   {refferedPoint || 0}
                 </h2>

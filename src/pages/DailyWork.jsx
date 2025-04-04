@@ -97,7 +97,7 @@ const DailyWork = () => {
             <p className="text-gray-700 font-medium">Investment Details:</p>
             <h3 className="text-lg font-semibold text-gray-900">0329-8439828</h3>
             <p className="text-gray-700">
-              Recipient: <span className="font-semibold">Ismail Sarwar</span>
+              Recipient: <span className="font-semibold">Ismail Ahmad</span>
             </p>
           </div>
           <p className="text-gray-600">Upload your payment proof for verification:</p>

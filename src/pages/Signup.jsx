@@ -124,7 +124,7 @@ const Signup = () => {
             <input
               type='Number'
               name='phone'
-              placeholder='Enter your jazzcash number'
+              placeholder='Enter your phone number'
               className='block w-full p-2.5 pl-10 text-sm text-gray-900 bg-gray-50 border-2 rounded-lg outline-none border-[#b39a2c]'
               required
             />
