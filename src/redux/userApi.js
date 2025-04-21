@@ -141,6 +141,14 @@ export const userApi = createApi({
       invalidatesTags: ["profile"],
     }),
 
+    deleteUser: builder.mutation({
+      query: ( userId  ) => ({
+        url: `/delete-user/${userId}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["profile"],
+    }),
+
     getAllUsers: builder.query({
       query: () => ({
         url: "/users",
@@ -168,5 +176,6 @@ export const {
   useUploadPaymentImageMutation,
   useUpdateEligibilityCriteriaMutation,
   useGetAllUsersQuery,
-  useUpdateUserRoleMutation
+  useUpdateUserRoleMutation,
+  useDeleteUserMutation
 } = userApi;

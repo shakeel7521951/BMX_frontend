@@ -33,20 +33,20 @@ function BottomBar() {
           <div className="flex justify-around py-">
             {/* Home */}
             <Link to={'/'} className="flex flex-col items-center">
-              <FaHome className="text-2xl sm:text-4xl text-[#b39c2a]" />
+              <FaHome className="text-3xl sm:text-4xl text-[#b39c2a]" />
               <span className="text-xs sm:text-sm font-semibold text-black">Home</span>
             </Link>
 
             {/* Feedback */}
             <Link to={'/feedback'} className="flex flex-col items-center group">
-              <MdMarkEmailRead className="text-2xl sm:text-4xl text-[#b39c2a]" />
+              <MdMarkEmailRead className="text-3xl sm:text-4xl text-[#b39c2a]" />
               <span className="text-xs sm:text-sm font-semibold md:text-base text-[#09090a]">Feedback</span>
             </Link>
 
             {/* Dashboard - Only for Admins */}
             {(profile?.userRole === "Admin" || profile?.userRole === "admin") && (
               <Link to="/admin/users" className="flex flex-col items-center">
-                <FaTachometerAlt className="text-2xl sm:text-4xl text-[#b39c2a]" />
+                <FaTachometerAlt className="text-3xl sm:text-4xl text-[#b39c2a]" />
                 <span className="text-xs sm:text-sm font-semibold text-black">Dashboard</span>
               </Link>
             )}
@@ -54,12 +54,12 @@ function BottomBar() {
             {/* Logout / Login */}
             {profile ? (
               <button className="flex flex-col items-center" onClick={handleLogout}>
-                <FaArrowCircleRight className="text-2xl sm:text-4xl transition-all duration-200 ease-in text-[#b39c2a]" />
+                <FaArrowCircleRight className="text-3xl sm:text-4xl transition-all duration-200 ease-in text-[#b39c2a]" />
                 <span className="text-xs sm:text-sm md:text-base text-black">Logout</span>
               </button>
             ) : (
               <Link to={'/login'} className="flex flex-col items-center">
-                <FaUser className="text-2xl sm:text-4xl text-[#b39c2a] transition-all duration-200 ease-in hover:text-[#b39c2a]" />
+                <FaUser className="text-3xl sm:text-4xl text-[#b39c2a] transition-all duration-200 ease-in hover:text-[#b39c2a]" />
                 <span className="text-xs sm:text-sm md:text-base font-semibold text-black">Login</span>
               </Link>
             )}
