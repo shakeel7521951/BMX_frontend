@@ -95,10 +95,10 @@ const DailyWork = () => {
           </p>
           <div className="bg-gray-100 p-4 rounded-lg w-full text-center">
             <p className="text-gray-700 font-medium">Investment Details:</p>
-            <h3 className="text-lg font-semibold text-gray-900">0329-8439828</h3>
-            <h3 className="text-lg font-semibold text-[#b39c2a]">Jazzcash</h3>
+            <h3 className="text-lg font-semibold text-gray-900">14120010144156220012</h3>
+            <h3 className="text-lg font-semibold text-[#b39c2a]">Allied Bank limited </h3>
             <p className="text-gray-700">
-              Recipient: <span className="font-semibold">Ismail Ahmad</span>
+              Recipient: <span className="font-semibold">BMX Adventure</span>
             </p>
           </div>
           <p className="text-gray-600">Upload your payment proof for verification:</p>
