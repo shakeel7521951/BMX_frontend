@@ -75,7 +75,7 @@ const AdminUserTable = () => {
   if (!users.length) return <p>No users found.</p>;
 
   return (
-    <div className="md:p-6 mb-16 md:mb-4">
+    <div className="md:p-6 mb-16 md:mb-8">
       <h2 className="text-xl md:text-2xl font-bold mb-4 mx-auto text-center">
         User <span className="text-[#B39C2A]">Records</span>
       </h2>

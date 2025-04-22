@@ -12,19 +12,19 @@ export default function AdminBottomBar() {
         <div className="max-w-md mx-auto px-4">
           <div className="flex justify-around py-">
             {/* Dashboard */}
-            <Link to="/" className="flex flex-col items-center group">
+            <Link to="/" className="flex flex-col items-center group py-2">
               <Home className="w-6 h-6 sm:w-8 sm:h-8 text-[#b39c2a]" />
               <span className="text-xs sm:text-sm font-semibold text-black">Dashboard</span>
             </Link>
 
             {/* Users */}
-            <Link to="/admin/users" className="flex flex-col items-center group">
+            <Link to="/admin/users" className="flex flex-col items-center group py-2">
               <Users className="w-6 h-6 sm:w-8 sm:h-8 text-[#b39c2a]" />
               <span className="text-xs sm:text-sm font-semibold text-black">Users</span>
             </Link>
 
             {/* Requests */}
-            <Link to="/admin/requests" className="flex flex-col items-center group">
+            <Link to="/admin/requests" className="flex flex-col items-center group py-2">
               <FileText className="w-6 h-6 sm:w-8 sm:h-8 text-[#b39c2a]" />
               <span className="text-xs sm:text-sm font-semibold text-black">Requests</span>
             </Link>
