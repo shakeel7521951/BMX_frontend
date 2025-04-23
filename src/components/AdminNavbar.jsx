@@ -34,7 +34,6 @@ export default function AdminBottomBar() {
 
       {/* Mobile Sidebar */}
       <div className={`fixed inset-0 z-50 flex ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} transition-transform duration-300 ease-in-out`}>
-        {/* Sidebar */}
         <div className="w-64 bg-gray-800 text-white h-full p-5 shadow-lg">
           <button className="mb-5 text-right w-full" onClick={() => setIsSidebarOpen(false)}>
             <X className="w-6 h-6 inline-block" />
