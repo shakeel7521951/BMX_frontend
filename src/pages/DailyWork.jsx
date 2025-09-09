@@ -58,7 +58,7 @@ const DailyWork = () => {
       <h1 className="text-2xl sm:text-5xl font-bold text-center">
         Daily Work <span className=" text-[#b39c2a]">Tasks</span>
       </h1>
-      {profile?.eligible === "verified" ? (
+      {profile?.eligible === true ? (
         <div className="flex flex-col gap-3 w-full">
           {dailyworkarray.map((task) => (
             <div

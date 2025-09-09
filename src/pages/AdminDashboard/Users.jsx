@@ -12,35 +12,36 @@ const AdminUserTable = () => {
   const [updateStatus] = useUpdateEligibilityCriteriaMutation();
   const [updateUserRole] = useUpdateUserRoleMutation();
   const [selectedUser, setSelectedUser] = useState(null);
-  const [newStatus, setNewStatus] = useState("");
+  const [newStatus, setNewStatus] = useState(null); // boolean instead of string
   const [selectedImage, setSelectedImage] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
 
-  const [deleteUser] = useDeleteUserMutation(); 
+  const [deleteUser] = useDeleteUserMutation();
 
   const users = data?.users && Array.isArray(data.users) ? data.users : [];
 
-  const filteredUsers = users.filter((user) =>
-    user.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    user.email.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredUsers = users.filter(
+    (user) =>
+      user.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      user.email.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   const handleUpdateClick = (user, status) => {
     setSelectedUser(user);
-    setNewStatus(status);
+    setNewStatus(status); // boolean value
   };
 
   const confirmUpdate = async () => {
     try {
       await updateStatus({
         userId: selectedUser._id,
-        status: newStatus,
+        status: newStatus, // true/false
       }).unwrap();
       refetch();
-      toast.success("User status updated successfully!");
+      toast.success("User eligibility updated successfully!");
       setSelectedUser(null);
     } catch (error) {
-      toast.error("Failed to update status");
+      toast.error("Failed to update eligibility");
     }
   };
 
@@ -61,7 +62,6 @@ const AdminUserTable = () => {
     if (!confirm) return;
 
     try {
-      // Uncomment and implement your delete API logic here:
       await deleteUser(userId).unwrap();
       toast.success("User deleted successfully!");
       refetch();
@@ -152,12 +152,13 @@ const AdminUserTable = () => {
                 <td className="p-2 border">
                   <select
                     className="border p-1"
-                    value={user.eligible}
-                    onChange={(e) => handleUpdateClick(user, e.target.value)}
+                    value={user.eligible ? "true" : "false"}
+                    onChange={(e) =>
+                      handleUpdateClick(user, e.target.value === "true")
+                    }
                   >
-                    <option value="unverified">Unverified</option>
-                    <option value="verified">Verified</option>
-                    <option value="rejected">Rejected</option>
+                    <option value="true">Eligible</option>
+                    <option value="false">Not Eligible</option>
                   </select>
                 </td>
                 <td className="p-2 border">
@@ -180,8 +181,9 @@ const AdminUserTable = () => {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-40">
           <div className="bg-white p-6 rounded-lg shadow-lg text-center max-w-[400px]">
             <p className="text-lg">
-              Are you sure you want to update {selectedUser.name}'s status to{" "}
-              <strong>{newStatus}</strong>?
+              Are you sure you want to update {selectedUser.name}'s eligibility
+              to{" "}
+              <strong>{newStatus ? "Eligible" : "Not Eligible"}</strong>?
             </p>
             <div className="mt-4 flex justify-center gap-4">
               <button
